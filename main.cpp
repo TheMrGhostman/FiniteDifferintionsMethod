@@ -91,7 +91,7 @@ int main() {
     alpha[0] = 0;
     alpha[1] = 0;
     beta[0] = 0;
-    beta[1] = -u[0];
+    beta[1] = u[0];
 
     for(int i = 1; i < m-1; i++){
         alpha[i+1] = B[i]/(C[i]-alpha[i]*A[i]);
@@ -101,7 +101,7 @@ int main() {
     //vypis(beta, m);
 
     for(int i = m-2; i >= 0; i--){
-        u[i] = alpha[i+1]*u[i+1] - beta[i+1];
+        u[i] = alpha[i+1]*u[i+1] + beta[i+1];           
     }
     vypis(u, m);
 
